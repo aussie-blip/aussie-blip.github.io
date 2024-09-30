@@ -1,0 +1,112 @@
+body {
+    background-color: #feaf5d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family:'Courier New', Courier, monospace;
+
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fef9d9;
+    font-size: 24px;
+    margin: 12px 12px;
+    padding: 4px 4px;
+    transition: 0.3s;
+}
+#telegram:hover {
+  background-color: #fab070;
+}
+#twitter:hover {
+  background-color: #fef9d9;
+  color: #e37939;
+}
+#pumpfun:hover {
+  background-color: #e37939;
+}
+
+img{
+  border-radius: 50%;
+  border-style: dashed;
+  border-color: #fef9d9;
+}
+
+h1, h2, p {
+    color: #fef9d9;
+    text-align: center;
+}
+
+p {
+  font-size: 32px;
+  font-weight: bold;
+}
+#ticker{
+    margin: 8% 5% 2% 5%;
+}
+#Path2{
+  margin: 5% 5%;
+}
+#blurb {
+    display:flex;
+    flex-direction: column;
+    margin:5% 5%;
+    justify-content: center;
+    align-items: center;
+}
+#links {
+    
+    text-align: center;
+    display:grid;
+    margin: 5% 10% 1rem 10%;
+    flex-direction: column;
+
+  --border-size: 0.3rem;
+  border: var(--border-size) solid transparent;
+
+  /* Paint an image in the border */
+  border-image: conic-gradient(
+      from var(--angle),
+      #fab070 0deg 120deg,
+      #fef9d9 120deg 240deg,
+      #e37939 240deg 360deg
+    )
+    1 stretch;
+  background: rgb(80.3 58.6 36.1 / var(--opacity));
+    
+}
+/* Animate when Houdini is available */
+@supports (background: paint(houdini)) {
+    @property --opacity {
+      syntax: "<number>";
+      initial-value: 0.3;
+      inherits: false;
+    }
+  
+    @property --angle {
+      syntax: "<angle>";
+      initial-value: 0deg;
+      inherits: false;
+    }
+  
+    @keyframes opacityChange {
+      to {
+        --opacity: 1;
+      }
+    }
+  
+    @keyframes rotate {
+      to {
+        --angle: 360deg;
+      }
+    }
+  
+    #links {
+      animation: rotate 4s linear infinite, opacityChange 3s infinite alternate;
+    }
+}
+
+#audio-disclaimer {
+    margin: 1em;
+}
